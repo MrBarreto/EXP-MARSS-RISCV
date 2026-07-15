@@ -1,0 +1,488 @@
+saviobarreto@B550M-UBUNTU22:~/marss-riscv/src$ ./marss-riscv -rw -ctrlc -sim-mem-model base ../configs/riscv64_inorder_soc.cfg
+* (marss-riscv): MARSS-RISCV: Micro-Architectural System Simulator for RISC-V
+* (marss-riscv): Created log file: ./sim.log
+* (marss-riscv): bios: ../marss-riscv-images/riscv64-unknown-linux-gnu/bbl64.bin
+* (marss-riscv): kernel: ../marss-riscv-images/riscv64-unknown-linux-gnu/kernel-riscv64.bin
+* (marss-riscv): drive0-file: ../marss-riscv-images/riscv64-unknown-linux-gnu/riscv64.img
+[    0.156825] NET: Registered protocol family 17
+[    0.157041] 9pnet: Installing 9P2000 support
+[    0.158812] EXT4-fs (vda): couldn't mount as ext3 due to feature incompatibilities
+[    0.159270] EXT4-fs (vda): couldn't mount as ext2 due to feature incompatibilities
+[    0.165081] EXT4-fs (vda): mounted filesystem with ordered data mode. Opts: (null)
+[    0.165217] VFS: Mounted root (ext4 filesystem) on device 254:0.
+[    0.168309] devtmpfs: mounted
+[    0.168477] Freeing unused kernel memory: 80K
+[    0.168553] This architecture does not have kernel memory protection.
+INIT: version 2.94 booting
+
+   OpenRC 0.41.2 is starting up Gentoo Linux (riscv64)
+
+ * Mounting /proc ...                                                                                                         [ ok ]
+ * Mounting /run ...
+ * /run/openrc: creating directory
+ * /run/lock: creating directory
+ * /run/lock: correcting owner
+ * Caching service dependencies ...                                                                                           [ ok ]
+ * Caching service dependencies ...                                                                                           [ ok ]
+ * Clock skew detected with `(null)'
+ * Adjusting mtime of `/run/openrc/deptree' to Tue Jun 18 01:28:44 2019
+ * WARNING: clock skew detected!
+ * Mounting /sys ...                                                                                                          [ ok ]
+ * Mounting cgroup filesystem ...                                                                                             [ ok ]
+ * Remounting devtmpfs on /dev ...                                                                                            [ ok ]
+ * Mounting /dev/pts ...                                                                                                      [ ok ]
+ * Mounting /dev/shm ...                                                                                                      [ ok ]
+ * Creating list of required static device nodes for the current kernel ...
+Warning: /lib/modules/4.15.0-00049-ga3b1e7a-dirty/modules.devname not found - ignoring                                        [ ok ]
+ * Setting up tmpfiles.d entries for /dev ...                                                                                 [ ok ]
+ * Starting udev ...                                                                                                          [ ok ]
+ * Generating a rule to create a /dev/root symlink ...                                                                        [ ok ]
+ * Populating /dev with existing devices through uevents ...                                                                  [ ok ]
+ * WARNING: clock skew detected!
+ * Setting system clock using the hardware clock [UTC] ...
+hwclock: Cannot access the Hardware Clock via any known method.
+hwclock: Use the --verbose option to see the details of our search for an access method.
+ * Failed to set the system clock                                                                                             [ !! ]
+ * Loading custom binary format handlers ...                                                                                  [ ok ]
+ * Checking local filesystems  ...                                                                                            [ ok ]
+ * Remounting filesystems ...
+ * fstabinfo: empty fstab                                                                                                     [ ok ]
+ * Updating /etc/mtab ...
+ * Creating mtab symbolic link                                                                                                [ ok ]
+ * Activating swap devices ...                                                                                                [ ok ]
+ * Mounting local filesystems ...                                                                                             [ ok ]
+ * Configuring kernel parameters ...                                                                                          [ ok ]
+ * Creating user login records ...                                                                                            [ ok ]
+ * Wiping /tmp directory ...                                                                                                  [ ok ]
+ * Setting hostname to localhost  ...                                                                                         [ ok ]
+ * Setting terminal encoding [UTF-8] ...                                                                                      [ ok ]
+ * Setting keyboard mode [UTF-8] ...                                                                                          [ ok ]
+ * Loading key mappings [us] ...                                                                                              [ ok ]
+ * Bringing up network interface lo ...                                                                                       [ ok ]
+ * Setting up tmpfiles.d entries ...                                                                                          [ ok ]
+ * Saving key mapping ...                                                                                                     [ ok ]
+ * Saving terminal encoding ...                                                                                               [ ok ]
+ * Initializing random number generator ...                                                                                   [ ok ]
+INIT: Entering runlevel: 3
+ * WARNING: clock skew detected!
+ * Starting cronie ...                                                                                                        [ ok ]
+ * Starting DHCP Client Daemon ...                                                                                            [ ok ]
+ * Mounting network filesystems ...                                                                                           [ ok ]
+ * Starting ntpd ...                                                                                                          [ ok ]
+ * Starting local ...                                                                                                         [ ok ]
+
+
+This is localhost.unknown_domain (Linux riscv64 4.15.0-00049-ga3b1e7a-dirty) 00:00:30
+
+localhost login: root (automatic login)
+
+Last login: Thu Jan  1 00:01:00 -00 1970 on hvc0
+localhost ~ # cd ../coremark
+-bash: cd: ../coremark: No such file or directory
+localhost ~ # rc-
+rc-config   rc-service  rc-sstat    rc-status   rc-update   
+localhost ~ # rc-
+rc-config   rc-service  rc-sstat    rc-status   rc-update   
+localhost ~ # rc-service ntpd stop
+ * Stopping ntpd ... [ ok ]
+localhost ~ # cp /usr/s
+sbin/  share/ src/   
+localhost ~ # cp /usr/s
+sbin/  share/ src/   
+localhost ~ # cp /usr/share/zoneinfo/A
+Africa/     America/    Antarctica/ Arctic/     Asia/       Atlantic/   Australia/  
+localhost ~ # cp /usr/share/zoneinfo/America/S
+Santa_Isabel   Santiago       Sao_Paulo      Shiprock       St_Barthelemy  St_Kitts       St_Thomas      Swift_Current
+Santarem       Santo_Domingo  Scoresbysund   Sitka          St_Johns       St_Lucia       St_Vincent     
+localhost ~ # cp /usr/share/zoneinfo/America/S
+Santa_Isabel   Santiago       Sao_Paulo      Shiprock       St_Barthelemy  St_Kitts       St_Thomas      Swift_Current
+Santarem       Santo_Domingo  Scoresbysund   Sitka          St_Johns       St_Lucia       St_Vincent     
+localhost ~ # cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime 
+localhost ~ # ntpdate 0.gentoo.pool.ntp.org
+11 Jul 14:15:07 ntpdate[1492]: step time server 200.160.7.186 offset 1783789838.679791 sec
+localhost ~ # date
+Sat Jul 11 14:15:11 -03 2026
+localhost ~ # rc-service ntpd start
+ * Starting ntpd ... [ ok ]
+localhost ~ # git clone https://github.com/eembc/coremark.git
+Cloning into 'coremark'...
+remote: Enumerating objects: 444, done.
+remote: Counting objects: 100% (232/232), done.
+remote: Compressing objects: 100% (95/95), done.
+remote: Total 444 (delta 176), reused 145 (delta 137), pack-reused 212 (from 1)
+Receiving objects: 100% (444/444), 530.87 KiB | 572.00 KiB/s, done.
+Resolving deltas: 100% (255/255), done.
+localhost ~ # git clone https://github.com/bucaps/marss-riscv-utils.git
+Cloning into 'marss-riscv-utils'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 10 (delta 2), reused 5 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (10/10), done.
+localhost ~ # cd marss-riscv-utils
+localhost ~/marss-riscv-utils # make
+cc  -o simstart simstart.c
+cc  -o simulate simulate.c
+simulate.c: In function 'main':
+simulate.c:75:28: warning: passing argument 2 of 'execv' from incompatible pointer type [-Wincompatible-pointer-types]
+       err = execv(argv[1], &argv[1]);
+                            ^~~~~~~~
+In file included from simulate.c:38:
+/usr/include/unistd.h:563:51: note: expected 'char * const*' but argument is of type 'const char **'
+ extern int execv (const char *__path, char *const __argv[])
+                                       ~~~~~~~~~~~~^~~~~~~~
+cc  -o simstop simstop.c
+mv simstart /usr/bin
+mv simstop /usr/bin
+mv simulate /usr/bin
+localhost ~/marss-riscv-utils # cd ../coremark
+localhost ~/coremark # make compile
+cc -O2 -Ilinux -Iposix -I. -DFLAGS_STR=\""-O2   -lrt"\" -DITERATIONS=0  core_list_join.c core_main.c core_matrix.c core_state.c core_util.c posix/core_portme.c -o ./coremark.exe -lrt
+localhost ~/coremark # simstart; ./coremark.exe  0x0 0x0 0x66 0 7 1 2000 > ./run1.log; simstop;
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 15001680643
+	* user-mode-cycles: 19449037501
+	* user-mode-ipc: 0.7713
+	* supervisor-mode-commits: 5576442
+	* supervisor-mode-cycles: 11034907
+	* supervisor-mode-ipc: 0.5053
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 1573068
+	* machine-mode-cycles: 2330904
+	* machine-mode-ipc: 0.6749
+	* total-commits: 15008830153
+	* total-cycles: 19462403312
+	* total-ipc: 0.7712
+	* simulation-time: 2474732 milliseconds
+	* total-commits-per-millisecond: 6064
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_14_59_16_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+localhost ~/coremark # simstart; ./coremark.exe  0x3415 0x3415 0x66 0 7 1 2000  > ./run2.log; simstop;
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 15020238347
+	* user-mode-cycles: 19488439499
+	* user-mode-ipc: 0.7707
+	* supervisor-mode-commits: 5141802
+	* supervisor-mode-cycles: 10209155
+	* supervisor-mode-ipc: 0.5036
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 1573439
+	* machine-mode-cycles: 2331539
+	* machine-mode-ipc: 0.6748
+	* total-commits: 15026953588
+	* total-cycles: 19500980193
+	* total-ipc: 0.7706
+	* simulation-time: 2476235 milliseconds
+	* total-commits-per-millisecond: 6068
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_16_24_19_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+localhost ~/coremark # simstart; ./coremark.exe 8 8 8 0 7 1 2000 > ./run3.log; simstop;
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 15564508721
+	* user-mode-cycles: 19885185749
+	* user-mode-ipc: 0.7827
+	* supervisor-mode-commits: 5251882
+	* supervisor-mode-cycles: 10389837
+	* supervisor-mode-ipc: 0.5055
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 1606010
+	* machine-mode-cycles: 2381099
+	* machine-mode-ipc: 0.6745
+	* total-commits: 15571366613
+	* total-cycles: 19897956685
+	* total-ipc: 0.7826
+	* simulation-time: 2562444 milliseconds
+	* total-commits-per-millisecond: 6076
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_17_08_00_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+localhost ~/coremark # cd ..
+localhost ~ # exit
+logout
+
+
+This is localhost.unknown_domain (Linux riscv64 4.15.0-00049-ga3b1e7a-dirty) 17:50:51
+
+localhost login: root (automatic login)
+
+Last login: Wed Dec 31 21:00:30 -03 1969 on hvc0
+localhost ~ # poweroff
+INIT: Switching to runlevel: 0
+INIT: Sending processes configured via /etc/inittab the TERM signal
+INIT: version 2.94 reloading
+ * WARNING: clock skew detected!
+ * Stopping local ...                                                                                                         [ ok ]
+ * Saving random seed ...                                                                                                     [ ok ]
+ * Stopping ntpd ...                                                                                                          [ ok ]
+ * Unmounting network filesystems ...                                                                                         [ ok ]
+ * Stopping DHCP Client Daemon ...                                                                                            [ ok ]
+ * Stopping cronie ...                                                                                                        [ ok ]
+ * Unmounting loop devices
+ * Unmounting filesystems
+ * Deactivating swap devices ...                                                                                              [ ok ]
+ * Stopping udev ...                                                                                                          [ ok ]
+ * Setting hardware clock using the system clock [UTC] ...
+hwclock: Cannot access the Hardware Clock via any known method.
+hwclock: Use the --verbose option to see the details of our search for an access method.
+ * Failed to sync clocks                                                                                                      [ !! ]
+ * ERROR: hwclock failed to stop
+ * Terminating remaining processes ...                                                                                        [ ok ]
+ * Killing remaining processes ...                                                                                            [ ok ]
+ * Clock skew detected!
+ * Saving dependency cache ...                                                                                                [ ok ]
+ * Remounting remaining filesystems read-only ...
+ *   Remounting / read only ...                                                                                               [ ok ]
+[13267.514714] reboot: Power down
+Power off
+
+saviobarreto@B550M-UBUNTU22:~/marss-riscv/src$ vim ../configs/riscv64_inorder_soc.cfg
+saviobarreto@B550M-UBUNTU22:~/marss-riscv/src$ vim ../configs/riscv64_
+riscv64_inorder_soc.cfg     riscv64_outoforder_soc.cfg  
+saviobarreto@B550M-UBUNTU22:~/marss-riscv/src$ vim ../configs/riscv64_
+riscv64_inorder_soc.cfg     riscv64_outoforder_soc.cfg  
+saviobarreto@B550M-UBUNTU22:~/marss-riscv/src$ vim ../configs/riscv64_outoforder_soc.cfg 
+saviobarreto@B550M-UBUNTU22:~/marss-riscv/src$ ./marss-riscv -rw -ctrlc -sim-mem-model base ../configs/riscv64__soc.cfg
+riscv64_inorder_soc.cfg     riscv64_outoforder_soc.cfg  
+saviobarreto@B550M-UBUNTU22:~/marss-riscv/src$ ./marss-riscv -rw -ctrlc -sim-mem-model base ../configs/riscv64__soc.cfg
+riscv64_inorder_soc.cfg     riscv64_outoforder_soc.cfg  
+saviobarreto@B550M-UBUNTU22:~/marss-riscv/src$ ./marss-riscv -rw -ctrlc -sim-mem-model base ../configs/riscv64__soc.cfg
+riscv64_inorder_soc.cfg     riscv64_outoforder_soc.cfg  
+saviobarreto@B550M-UBUNTU22:~/marss-riscv/src$ ./marss-riscv -rw -ctrlc -sim-mem-model base ../configs/riscv64_outoforder_soc.cfg
+* (marss-riscv): MARSS-RISCV: Micro-Architectural System Simulator for RISC-V
+* (marss-riscv): Created log file: ./sim.log
+* (marss-riscv): bios: ../marss-riscv-images/riscv64-unknown-linux-gnu/bbl64.bin
+* (marss-riscv): kernel: ../marss-riscv-images/riscv64-unknown-linux-gnu/kernel-riscv64.bin
+* (marss-riscv): drive0-file: ../marss-riscv-images/riscv64-unknown-linux-gnu/riscv64.img
+[    0.157323] NET: Registered protocol family 17
+[    0.157538] 9pnet: Installing 9P2000 support
+[    0.159308] EXT4-fs (vda): couldn't mount as ext3 due to feature incompatibilities
+[    0.159758] EXT4-fs (vda): couldn't mount as ext2 due to feature incompatibilities
+[    0.165550] EXT4-fs (vda): mounted filesystem with ordered data mode. Opts: (null)
+[    0.165688] VFS: Mounted root (ext4 filesystem) on device 254:0.
+[    0.168788] devtmpfs: mounted
+[    0.168957] Freeing unused kernel memory: 80K
+[    0.169030] This architecture does not have kernel memory protection.
+INIT: version 2.94 booting
+
+   OpenRC 0.41.2 is starting up Gentoo Linux (riscv64)
+
+ * Mounting /proc ...                                                                                                         [ ok ]
+ * Mounting /run ...
+ * /run/openrc: creating directory
+ * /run/lock: creating directory
+ * /run/lock: correcting owner
+ * Caching service dependencies ...                                                                                           [ ok ]
+ * Caching service dependencies ...                                                                                           [ ok ]
+ * Clock skew detected with `(null)'
+ * Adjusting mtime of `/run/openrc/deptree' to Mon Jun 17 22:28:44 2019
+ * WARNING: clock skew detected!
+ * Mounting /sys ...                                                                                                          [ ok ]
+ * Mounting cgroup filesystem ...                                                                                             [ ok ]
+ * Remounting devtmpfs on /dev ...                                                                                            [ ok ]
+ * Mounting /dev/pts ...                                                                                                      [ ok ]
+ * Mounting /dev/shm ...                                                                                                      [ ok ]
+ * Creating list of required static device nodes for the current kernel ...
+Warning: /lib/modules/4.15.0-00049-ga3b1e7a-dirty/modules.devname not found - ignoring                                        [ ok ]
+ * Setting up tmpfiles.d entries for /dev ...                                                                                 [ ok ]
+ * Starting udev ...                                                                                                          [ ok ]
+ * Generating a rule to create a /dev/root symlink ...                                                                        [ ok ]
+ * Populating /dev with existing devices through uevents ...                                                                  [ ok ]
+ * WARNING: clock skew detected!
+ * Setting system clock using the hardware clock [UTC] ...
+hwclock: Cannot access the Hardware Clock via any known method.
+hwclock: Use the --verbose option to see the details of our search for an access method.
+ * Failed to set the system clock                                                                                             [ !! ]
+ * Loading custom binary format handlers ...                                                                                  [ ok ]
+ * Checking local filesystems  ...                                                                                            [ ok ]
+ * Remounting filesystems ...
+ * fstabinfo: empty fstab                                                                                                     [ ok ]
+ * Updating /etc/mtab ...
+ * Creating mtab symbolic link                                                                                                [ ok ]
+ * Activating swap devices ...                                                                                                [ ok ]
+ * Mounting local filesystems ...                                                                                             [ ok ]
+ * Configuring kernel parameters ...                                                                                          [ ok ]
+ * Creating user login records ...                                                                                            [ ok ]
+ * Wiping /tmp directory ...                                                                                                  [ ok ]
+ * Setting hostname to localhost  ...                                                                                         [ ok ]
+ * Setting terminal encoding [UTF-8] ...                                                                                      [ ok ]
+ * Setting keyboard mode [UTF-8] ...                                                                                          [ ok ]
+ * Loading key mappings [us] ...                                                                                              [ ok ]
+ * Bringing up network interface lo ...                                                                                       [ ok ]
+ * Setting up tmpfiles.d entries ...                                                                                          [ ok ]
+ * Saving key mapping ...                                                                                                     [ ok ]
+ * Saving terminal encoding ...                                                                                               [ ok ]
+ * Initializing random number generator ...                                                                                   [ ok ]
+INIT: Entering runlevel: 3
+ * WARNING: clock skew detected!
+ * Starting cronie ...                                                                                                        [ ok ]
+ * Starting DHCP Client Daemon ...                                                                                            [ ok ]
+ * Mounting network filesystems ...                                                                                           [ ok ]
+ * Starting ntpd ...                                                                                                          [ ok ]
+ * Starting local ...                                                                                                         [ ok ]
+
+
+This is localhost.unknown_domain (Linux riscv64 4.15.0-00049-ga3b1e7a-dirty) 21:00:33
+
+localhost login: root (automatic login)
+
+Last login: Sat Jul 11 17:50:51 -03 2026 on hvc0
+localhost ~ # simstart; ./coremark.exe  0x0 0x0 0x66 0 7 1 2000 > ./run1.log; simstop;
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+-bash: ./coremark.exe: No such file or directory
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 193523
+	* user-mode-cycles: 584966
+	* user-mode-ipc: 0.3308
+	* supervisor-mode-commits: 1137171
+	* supervisor-mode-cycles: 3173860
+	* supervisor-mode-ipc: 0.3583
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 4515
+	* machine-mode-cycles: 12268
+	* machine-mode-ipc: 0.3680
+	* total-commits: 1335209
+	* total-cycles: 3771094
+	* total-ipc: 0.3541
+	* simulation-time: 500 milliseconds
+	* total-commits-per-millisecond: 2670
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_18_00_07_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+localhost ~ # simstart; ./coremark.exe  0x3415 0x3415 0x66 0 7 1 2000  > ./run2.log; simstop;
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+-bash: ./coremark.exe: No such file or directory
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 178918
+	* user-mode-cycles: 563679
+	* user-mode-ipc: 0.3174
+	* supervisor-mode-commits: 1063221
+	* supervisor-mode-cycles: 2951015
+	* supervisor-mode-ipc: 0.3603
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 3325
+	* machine-mode-cycles: 10230
+	* machine-mode-ipc: 0.3250
+	* total-commits: 1245464
+	* total-cycles: 3524924
+	* total-ipc: 0.3533
+	* simulation-time: 465 milliseconds
+	* total-commits-per-millisecond: 2678
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_18_00_25_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+localhost ~ # simstart; ./coremark.exe 8 8 8 0 7 1 2000 > ./run3.log; simstop;
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+-bash: ./coremark.exe: No such file or directory
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 177087
+	* user-mode-cycles: 569487
+	* user-mode-ipc: 0.3110
+	* supervisor-mode-commits: 1070542
+	* supervisor-mode-cycles: 3004379
+	* supervisor-mode-ipc: 0.3563
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 3325
+	* machine-mode-cycles: 10316
+	* machine-mode-ipc: 0.3223
+	* total-commits: 1250954
+	* total-cycles: 3584182
+	* total-ipc: 0.3490
+	* simulation-time: 470 milliseconds
+	* total-commits-per-millisecond: 2661
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_18_00_34_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+localhost ~ # cd coremark/
+localhost ~/coremark # date
+Wed Dec 31 21:02:22 -03 1969
+localhost ~/coremark # rc-service ntpd stop
+ * Stopping ntpd ... [ ok ]
+localhost ~/coremark # cp /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime 
+localhost ~/coremark # ntpdate 0.gentoo.pool.ntp.org
+11 Jul 18:02:51 ntpdate[1497]: step time server 200.160.7.197 offset 1783803531.656528 sec
+localhost ~/coremark # date
+Sat Jul 11 18:02:54 -03 2026
+localhost ~/coremark # rc-service ntpd start
+ * Starting ntpd ... [ ok ]
+localhost ~/coremark # date
+Sat Jul 11 18:03:13 -03 2026
+localhost ~/coremark # simstart; ./coremark.exe  0x0 0x0 0x66 0 7 1 2000 > ./run1.log; simstop;
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 15001666161
+	* user-mode-cycles: 17480813777
+	* user-mode-ipc: 0.8582
+	* supervisor-mode-commits: 4969637
+	* supervisor-mode-cycles: 10504335
+	* supervisor-mode-ipc: 0.4731
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 1416709
+	* machine-mode-cycles: 2370039
+	* machine-mode-ipc: 0.5978
+	* total-commits: 15008052507
+	* total-cycles: 17493688151
+	* total-ipc: 0.8579
+	* simulation-time: 2746685 milliseconds
+	* total-commits-per-millisecond: 5464
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_18_49_17_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+localhost ~/coremark # simstart; ./coremark.exe  0x3415 0x3415 0x66 0 7 1 2000  > ./run2.log; simstop;
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 15020244600
+	* user-mode-cycles: 17501632962
+	* user-mode-ipc: 0.8582
+	* supervisor-mode-commits: 4908544
+	* supervisor-mode-cycles: 10293015
+	* supervisor-mode-ipc: 0.4769
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 1416695
+	* machine-mode-cycles: 2370036
+	* machine-mode-ipc: 0.5978
+	* total-commits: 15026569839
+	* total-cycles: 17514296013
+	* total-ipc: 0.8580
+	* simulation-time: 2754620 milliseconds
+	* total-commits-per-millisecond: 5455
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_19_40_44_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+localhost ~/coremark # simstart; ./coremark.exe 8 8 8 0 7 1 2000 > ./run3.log; simstop;
+* (marss-riscv): Switching to full-system simulation mode at pc = 0x0000002aaaaaa66e
+
+* (marss-riscv): Performance Summary:
+	* user-mode-commits: 15564511797
+	* user-mode-cycles: 18099219713
+	* user-mode-ipc: 0.8600
+	* supervisor-mode-commits: 5030847
+	* supervisor-mode-cycles: 10580824
+	* supervisor-mode-ipc: 0.4755
+	* hypervisor-mode-commits: 0
+	* hypervisor-mode-cycles: 0
+	* hypervisor-mode-ipc: -nan
+	* machine-mode-commits: 1464946
+	* machine-mode-cycles: 2450931
+	* machine-mode-ipc: 0.5977
+	* total-commits: 15571007590
+	* total-cycles: 18112251468
+	* total-ipc: 0.8597
+	* simulation-time: 2747299 milliseconds
+	* total-commits-per-millisecond: 5667
+* (marss-riscv): Saved simulation stats in ./sim_Sat_Jul_11_21_20_43_2026_.csv
+* (marss-riscv): Switching to emulation mode mode at pc = 0x0000002aaaaaa66a
+localhost ~/coremark # 
+
